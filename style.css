@@ -1,0 +1,43 @@
+#ngq-host { display: flex; align-items: center; flex: 0 0 auto; }
+#ngq-host .ngq-trigger {
+    position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 3px; min-width: 34px; min-height: 38px; padding: 3px 4px;
+    border: 0; border-radius: 8px; background: transparent; color: var(--SmartThemeBodyColor, #dfd8ed);
+    cursor: pointer; font-family: inherit; opacity: .8;
+}
+#ngq-host .ngq-trigger:hover, #ngq-host .ngq-trigger:focus-visible { opacity: 1; background: color-mix(in srgb, currentColor 10%, transparent); }
+#ngq-host .ngq-trigger:focus-visible { outline: 2px solid var(--SmartThemeQuoteColor, #cbb1ed); outline-offset: 2px; }
+#ngq-host .ngq-trigger i { font-size: 17px; }
+#ngq-host .ngq-badge { font-size: 9px; line-height: 1; font-variant-numeric: tabular-nums; }
+#ngq-host[data-level="warning"] .ngq-trigger { color: #d6b77b; }
+#ngq-host[data-level="danger"] .ngq-trigger { color: #ec9cb4; }
+#ngq-host[data-level="unknown"] .ngq-trigger { opacity: .55; }
+#ngq-panel {
+    position: fixed; z-index: 32000; width: min(310px, calc(100vw - 16px)); max-height: calc(100dvh - 16px); overflow-y: auto;
+    box-sizing: border-box; padding: 16px 18px; border-radius: 14px;
+    color: var(--SmartThemeBodyColor, #dfd8ed); background: var(--SmartThemeBlurTintColor, #1c192b);
+    border: 1px solid var(--SmartThemeBorderColor, #494054); box-shadow: 0 12px 40px #0006;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); font-family: inherit; font-size: 13px; line-height: 1.5;
+}
+#ngq-panel[hidden], #ngq-panel [hidden] { display: none !important; }
+#ngq-panel .ngq-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 15px; font-weight: 600; }
+#ngq-panel .ngq-header span i { margin-right: 6px; color: var(--SmartThemeQuoteColor, #cbb1ed); }
+#ngq-panel .ngq-refresh { border: 0; background: transparent; color: inherit; width: 30px; height: 30px; border-radius: 7px; cursor: pointer; }
+#ngq-panel .ngq-refresh:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+#ngq-panel .ngq-refresh:disabled { opacity: .4; cursor: wait; }
+#ngq-panel .ngq-caption { opacity: .7; font-size: 12px; }
+#ngq-panel .ngq-remaining { font-size: 30px; line-height: 1.3; font-weight: 600; font-variant-numeric: tabular-nums; margin: 3px 0 10px; }
+#ngq-panel .ngq-meter { height: 5px; border-radius: 8px; overflow: hidden; background: color-mix(in srgb, currentColor 12%, transparent); }
+#ngq-panel .ngq-fill { height: 100%; background: var(--SmartThemeQuoteColor, #cbb1ed); border-radius: inherit; transition: width .3s ease; }
+#ngq-panel[data-level="warning"] .ngq-fill { background: #d6b77b; }
+#ngq-panel[data-level="danger"] .ngq-fill { background: #ec9cb4; }
+#ngq-panel[data-level="unknown"] .ngq-fill { opacity: .4; }
+#ngq-panel .ngq-details { margin: 14px 0 0; }
+#ngq-panel .ngq-details > div { display: flex; justify-content: space-between; gap: 10px; margin: 6px 0; }
+#ngq-panel dt { opacity: .7; }
+#ngq-panel dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+#ngq-panel footer { border-top: 1px solid var(--SmartThemeBorderColor, #494054); margin-top: 12px; padding-top: 10px; font-size: 11px; }
+#ngq-panel .ngq-status { opacity: .75; }
+#ngq-panel .ngq-help { opacity: .5; margin-top: 5px; }
+#ngq-panel .ngq-overage { margin-top: 10px; font-size: 11px; color: #d6b77b; }
+@media (prefers-reduced-motion: reduce) { #ngq-panel .ngq-fill { transition: none; } }
